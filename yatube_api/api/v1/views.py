@@ -1,8 +1,9 @@
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework import permissions
+
 from .permissions import IsOwnerOrReadOnly
-from .serializers import GroupSerializer, PostSerializer, CommentSerializer
+from .serializers import CommentSerializer, GroupSerializer, PostSerializer
 
 from posts.models import Group, Post
 
@@ -28,12 +29,6 @@ class PostViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-    def perform_update(self, serializer):
-        super(PostViewSet, self).perform_update(serializer)
-
-    def perform_destroy(self, instance):
-        instance.delete()
-
 
 class CommentViewSet(viewsets.ModelViewSet):
     """Вьюсет комментария"""
@@ -53,9 +48,3 @@ class CommentViewSet(viewsets.ModelViewSet):
         post = get_object_or_404(Post, pk=post_id)
         queryset = post.comments.all()
         return queryset
-
-    def perform_update(self, serializer):
-        super(CommentViewSet, self).perform_update(serializer)
-
-    def perform_destroy(self, instance):
-        instance.delete()
