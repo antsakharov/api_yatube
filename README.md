@@ -54,4 +54,41 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
+•	**Создайте и выполните миграции:**
 
+```csharp 
+python manage.py makemigrations
+```
+
+```csharp 
+python manage.py migrate
+```
+•	**Примеры запросов к API:**
+
+Получить список всех постов (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/posts/
+```
+
+Получить определенный пост (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/posts/1/
+```
+
+Получить коментарии определенного поста (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/posts/1/comments/
+```
+
+Получить список всех групп (GET):
+```csharp
+http://127.0.0.1:8000/api/v1/groups/
+```
+
+Создать новый пост (POST):
+
+
+(Требуется аутентификация)
+```csharp
+http://127.0.0.1:8000/api/v1/posts/
+```
