@@ -63,7 +63,7 @@ python manage.py makemigrations
 ```csharp 
 python manage.py migrate
 ```
-•	**Примеры запросов к API:**
+## Примеры запросов к API:
 
 Получить список всех постов (GET):
 ```csharp
