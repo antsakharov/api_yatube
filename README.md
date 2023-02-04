@@ -16,7 +16,7 @@ Api социальной сети yatube
 
 •	**Стек:**
 
-Python 3.7, Django 3.2, DRF, JWT + Djoser, Pillow 8.3.1
+Python 3.7, Django 3.2, DRF, Pillow 8.3.1
 
 ## Инструкция по развёртыванию проекта
 
